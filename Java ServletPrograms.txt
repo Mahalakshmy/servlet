@@ -1,0 +1,94 @@
+Program 1---Sum of Two Numbers
+
+HTML file
+
+<html>
+<body>
+<h1>Sum of 2 Numbers</h1>
+<form action="sum" method="post">
+Enter 1st number:<input type="number" name="t1">
+Enter 2nd number:<input type="number" name="t2">
+<input type="submit" value="sum">
+</form>
+</body>
+</html>
+
+XML  file
+
+<web-app>
+<servlet>
+<servlet-name>first</servlet-name>
+<servlet-class>FirstServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>first</servlet-name>
+<url-pattern>sum</url-pattern>
+</servlet-mapping>
+</web-app>
+
+FirstServlelt program
+
+import java.servlet.*;
+import java.servlet.http.*;
+import java.io.*;
+
+public class Firstservlet extends HttpServlet{
+public void doPost(HttpServletRequest request,HttpServletResponse response)
+		throws servletException,IO Exception {
+PrintWriter out=response.getwriter();
+int no1=Integer.parseInt(request.getparameter("t1"));
+int no2=Integer.parseInt(request.getparameter("t2"));
+int result=no1+no2;
+out.println("Sum of Two number is"+result+,"This is Post method");
+}
+}
+
+Program 2------Login form
+
+HTML file
+
+<html>
+<body>
+<h1>Login Form</h1>
+<form action="login" method="post">
+Username:<input type="text" name="t1">
+Password:<input type="password" name="t2">
+<input type="submit" value="Login">
+</form>
+</body>
+</html>
+
+XML file
+
+<web-app>
+<servlet>
+<servlet-name>first</servlet-name>
+<servlet-class>FirstServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>first</servlet-name>
+<url-pattern>login</url-pattern>
+</servlet-mapping>
+</web-app>
+
+FirstServlet File
+
+import java.servlet.*;
+import java.servlet.http.*;
+import java.io.*;
+
+public class Firstservlet extends HttpServlet{
+public void doPost(HttpServletRequest request,HttpServletResponse response)
+		throws servletException,IO Exception {
+PrintWriter out=response.getwriter();
+string username=request.getParameter("t1");
+string password=request.getParameter("t2");
+if(username.equals("cool")&& password.equals("cool$11"))
+out.println("Login Successfull");
+else
+out.println("Login Failed");
+}
+}
+
